@@ -1,0 +1,6 @@
+[
+  {
+    "name": "producto",
+    "pattern": "a([A-Z,a-z])+"
+  }
+]

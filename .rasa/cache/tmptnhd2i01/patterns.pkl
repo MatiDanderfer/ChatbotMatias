@@ -1,0 +1,6 @@
+[
+  {
+    "name": "producto",
+    "pattern": "\\b\\w+\\b"
+  }
+]

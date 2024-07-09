@@ -1,0 +1,119 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ayuda
+  - agradecimiento
+  - buscar_prod
+  - realizar_compra
+  - preg_chitchat_mal
+  - pregunta_chitchat_bien
+  - keep_buscar_prod
+  - compra_prod
+  - buscar_categ
+  - preg_proposito
+#  - consulta_marca
+
+actions:
+  - action_busca_prod
+  - action_busca_categorias
+
+entities:
+- producto
+- marca
+- nombre
+  
+slots:
+  producto:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: producto
+      intent: buscar_prod
+
+  marca:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: marca
+
+  nombre:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: nombre
+
+  #cantidad:
+   # type: int
+  #precio:
+   # type: float
+
+responses:
+  utter_greet:
+  - text: "Hola , como estas?"
+
+  utter_cheer_up:
+  - text: "Algo para alegrarte:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "¿Eso fue de ayuda?"
+
+  utter_happy:
+  - text: "Muy bien!"
+
+  utter_goodbye:
+  - text: "Hasta luego"
+
+  utter_iamabot:
+  - text: "Yo soy un bot, powered by Rasa."
+
+  utter_help:
+  - text: "¿En que te puedo ayudar?."
+
+  utter_help_ask:
+  - text: "¿Algo mas en que te pueda ser de ayuda?."
+
+  utter_no_entiendo:
+  - text: "No entiendo lo que me estas preguntando."
+
+  utter_busqueda_prod:
+  - text: "¿Que producto estaria buscando?."
+
+  utter_sigo_sin_entender:
+  - text: "Sigo sin entender."
+    image: "https://i.imgur.com/qosc6Up.gif"
+
+  utter_recomendacion:
+  - text: "¿Necesitas alguna recomendacion?"
+
+  utter_buscar_productos:
+  - text: "Estos son los productos: " 
+  
+  utter_terminar_compra:
+  - text: "Listo, se esta realizando la compra."
+
+  utter_chitchat_bien:
+  - text: "Me alegro en que lo puedo ayudar"
+
+  utter_chitchat_mal:
+  - text: "uhh que mal, hay algo en lo que pueda ayudar?"
+
+  utter_repita_porfavor:
+  - text: "Perdon no logre entender del todo, puede repetir lo que dijo."
+
+  utter_proposito:
+  - text: "Soy un bot diseñado para ayudarte en la busqueda de productos."
+
+  
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

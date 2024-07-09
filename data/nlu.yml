@@ -1,0 +1,287 @@
+#version: "3.1"
+
+nlu:
+- regex: producto
+  examples: |
+    - [\w\s]+
+#    - \b\w+\b
+#    - a([A-Z,a-z])+
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Hola
+    - holaa
+    - buenas
+    - wenas
+    - Wenas
+    - nas
+    - que hace
+    - ola
+    - buenas tardes
+    - buenos dias
+    - que tal
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - Hasta luego
+    - adios
+    - chau
+    - nos vemos
+    - bye
+    - bueno gracias.
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - si
+    - ok
+    - por supuesto
+    - de una
+    - oka
+    - piola
+    - suena joya
+    - joya
+    - oki
+    - piolin
+    - joyita
+  
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - tuve un mal dia
+    - estoy triste
+    - no me siento bien
+    - estoy decepcionado
+    - muy triste
+    - super triste
+    - triste
+    - muy bajon
+    - no muy bien
+    - terriblemente mal
+    - extremadamente triste
+    - muuuuuuuy triste
+    - que tistre
+    - sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - ¿sos un bot?
+    - ¿sos un robot?
+    - estoy hablando con un robot?
+    - sos una persona?
+    - decime que no sos un bot
+    
+- intent: agradecimiento
+  examples: |
+   - muchas gracias
+   - que bueno!
+   - que buenooo
+   - gracias
+   - muchas gracias
+   - gracias mil
+   - gracias por la ayuda
+   - te agradezco
+   - agradecido/a
+   - estoy agradecido/a
+   - gracias de antemano
+   - gracias por tu tiempo
+   - gracias, fue de gran ayuda
+   - te lo agradezco mucho
+   - agradecimiento sincero
+   - aprecio tu ayuda
+   - excelente, gracias
+   - perfecto, gracias
+   - gracias, me salvaste
+   - te estoy muy agradecido/a
+   - agradecimiento profundo
+   - gracias infinitas
+   - mil gracias por todo
+   - gracias, eres increíble
+   - aprecio tu esfuerzo
+   - gracias, genial
+   - muchas gracias de corazón
+   - gracias, eres un/a profesional
+
+- intent: buscar_categ
+  examples: |
+   - que categorias tenes
+   - de que tipo hay
+   - que clase de objetos hay disponibles
+   - cosas de que tipo hay para comprar
+   - categorias disponibles
+   - que tipo de categorias se venden
+   - categorias pls
+   - clases de objetos que venden 
+   - que tipos de prod se venden
+   - listame las categorias
+   - lista de categorias
+   - que prod venden
+
+
+
+- intent: buscar_prod
+  examples: |
+   - quiero buscar un [Tv](producto) 32 pulgadas LG 
+   - que [Lavarropa](producto) me podes recomendas
+   - dame todos los [Heladeras](producto) de marca  Saiar  
+   - que [lavavajillas](producto) hay disponibles
+   - Quiero comprar una [remera](producto)
+   - estaria necesitando una [aspiradora](producto)
+   - cuanto sale unas [Medias](producto) azules
+   - en cuanto estan las [pelotas de futbol](producto)
+   - precio de [Martillos](producto)
+   - Quiero comprar un [Pepino](producto)
+   - un (ladrillo)[producto]
+   - (papeles)[producto]
+   - (reposera)[producto]
+   - quiero comprar un [bolso](producto)
+   - que [bicicleta](producto) me recomendas
+   - tenes disponibilidad de [auriculares](producto)
+   - busco unos [botines](producto)
+   - hay [zapatillas](producto) disponibles?
+   - tenes stock de [galletitas](producto)?
+   - quiero ver [smartphones](producto) de última generación
+   - que [televisores](producto) tienen función de Smart TV
+   - necesito una [licuadora](producto) para cocina
+   - me gustaría comprar un [perfume](producto) de mujer
+   - dame opciones de [auriculares inalámbricos](producto)
+   - estoy buscando una [mesa de madera](producto) para el comedor
+   - qué [cámaras digitales](producto) tienen buena resolución
+   - quiero encontrar [sillas de oficina](producto) cómodas
+   - tienes [lámparas LED](producto) disponibles?
+   - necesito una [mochila](producto) para la universidad
+   - que [pinturas](producto) artísticas tienes en stock
+   - estoy interesado en [libros de ciencia ficción](producto)
+   - estoy buscando [muebles de jardín](producto) resistentes a la intemperie
+   - quiero una [máquina de café automática](producto) para casa
+   - necesito [juguetes educativos](producto) para niños
+   - quiero ver [teclados mecánicos](producto) para computadora
+   - busco [ropa deportiva](producto) para correr
+   - cuáles son las [mesas de camping](producto) más ligeras que tienes
+   - hay [refrigeradores](producto) de dos puertas disponibles?
+   - me interesa comprar [cinturones de cuero](producto) para hombre
+   - busco [sillas de playa plegables](producto) para vacaciones
+
+- intent: realizar_compra
+  examples: |
+    - Quiero realizar la compra.
+    - Finaliza la compra.
+    - Estoy listo para pagar.
+    - con esto estaria todo listo.
+
+- intent: pregunta_chitchat_bien
+  examples: |
+    - Bien y vos?
+    - todo bien.
+    - super y usted
+    - to bien
+    - joya vos?
+    - por suerte bien
+    - bine bien
+    - bien bien
+    - bene bne muito bene
+    - super joya
+    
+- intent: preg_chitchat_mal
+  examples: |
+    - muy mal
+    - todo mal
+    - podria estar mejor
+    - no del todo bien
+    - mal
+    - no en mi mejor momento
+    - ahi vamos
+
+
+#- intent: consulta_marca
+#  examples: |
+#    - Tenes productos de [LG](marca) en televisores
+#    - que heladeras de [Noir](marca) hay
+#    - hay algo interesante de [Phillips](marca)
+#    - que productos de marca [Dolce&Gabana](marca)
+#    - algun bolso [Gucci](marca)
+
+
+- intent: preg_proposito
+  examples: |
+    - cual es tu proposito
+    - cual es tu funcionalidad
+    - en que me podes ayudar vos?
+    - que es lo que podes hacer.
+    - proposito tuyo
+    - para que estas hecho
+    - cual es tu finalidad
+    - para que fuiste desarrollado
+    - finalidad del bot
+     
+
+- intent: compra_prod
+  examples: |
+   - quisiera comprar un producto
+   - comprar producto
+   - que productos venden
+   - estoy buscando un producto
+   - quiero comprar algo
+   - estoy de compras
+   - que me ofreces
+   - productos venden?
+   

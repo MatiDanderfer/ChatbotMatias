@@ -1,0 +1,98 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+#- story: ayuda
+#  steps:
+#  - intent: ayuda
+#  - action: utter_help
+#  - action: utter_did_that_help
+#  - intent: affirm
+#  - action: utter_help_ask
+ 
+#- story: confusion
+#  steps:
+#  - intent: help_ask
+#  - action: utter_help
+#  - intent: help_ask
+#  - action: utter_no_entiendo
+#  - action: utter_sigo_sin_entender 
+
+
+- story: buscar_producto 
+  steps:  
+  - intent: greet
+  - action: utter_greet
+  - intent: pregunta_chitchat_bien
+  - action: utter_chitchat_bien
+  - intent: buscar_prod
+  - action: action_busca_prod
+  - intent: realizar_compra
+  - action: utter_terminar_compra
+
+
+- story: buscar_producto 
+  steps:  
+  - intent: greet
+  - action: utter_greet
+  - intent: preg_chitchat_mal
+  - action: utter_chitchat_mal
+  - intent: buscar_prod
+  - action: action_busca_prod
+  - intent: realizar_compra
+  - action: utter_terminar_compra
+
+- story: keep_buscar_prod
+  steps:
+  - intent: buscar_prod
+  - action: action_busca_prod
+  - intent: realizar_compra
+  - action: utter_terminar_compra
+
+- story: busqueda_prod
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: pregunta_chitchat_bien
+  - action: utter_chitchat_bien
+  - intent: compra_prod
+  - action: utter_busqueda_prod
+  - intent: buscar_prod
+  - action: action_busca_prod
+  - intent: realizar_compra
+  - action: utter_terminar_compra
+ 
+- story: ask_proposito
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: preg_proposito
+  - action: utter_proposito
+
